@@ -4,6 +4,7 @@ try {
         isEmpty,
         is8Long,
         containsSpecialChar,
+        containsNuber
     } = require("./services/validations");
     const gamerTagInput = document.getElementById("gamerTagInput");
     const checkButton = document.getElementById("gamerTagCheckButton");
@@ -22,6 +23,9 @@ try {
             : "Gamer tag is valid";
         feedbackMessageText = containsSpecialChar(gamerTagValue)
             ? "Gamer tag have to contains special character"
+            : "Gamer tag is valid";
+            feedbackMessageText = containsNuber(gamerTagValue)
+            ? "Gamer tag have to contains number"
             : "Gamer tag is valid";
         // TODO: Add the logic to display the correct feedback message (error and validation)
         feedbackMessageText = isEmpty(gamerTagValue)

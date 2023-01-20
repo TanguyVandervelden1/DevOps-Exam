@@ -9,6 +9,11 @@ const containsSpecialChar = (label) => {
     return label.match(special) ? true : false;
 };
 
+const containsNuber = (label) => {
+    return /\d/.test(label);
+};
+
+exports.containsNuber = containsNuber;
 exports.containsSpecialChar = containsSpecialChar;
 exports.is8Long = is8Long;
 exports.isEmpty = isEmpty;
