@@ -1,6 +1,10 @@
 /* istanbul ignore file */
 try {
-    const { isEmpty, is8Long } = require("./services/validations");
+    const {
+        isEmpty,
+        is8Long,
+        containsSpecialChar,
+    } = require("./services/validations");
     const gamerTagInput = document.getElementById("gamerTagInput");
     const checkButton = document.getElementById("gamerTagCheckButton");
     const feedbackMessage = document.getElementById("gamerTagFeedback");
@@ -15,6 +19,9 @@ try {
     checkButton.addEventListener("click", () => {
         feedbackMessageText = is8Long(gamerTagValue)
             ? "Gamer tag cannot be shorter than 8 character"
+            : "Gamer tag is valid";
+        feedbackMessageText = containsSpecialChar(gamerTagValue)
+            ? "Gamer tag have to contains special character"
             : "Gamer tag is valid";
         // TODO: Add the logic to display the correct feedback message (error and validation)
         feedbackMessageText = isEmpty(gamerTagValue)
