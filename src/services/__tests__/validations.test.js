@@ -39,5 +39,10 @@ describe("validations tests suites - gamer tag special character", () => {
         const result = containsSpecialChar("Gamer");
         expect(result).toBe(false);
     });
+
+    test("should retun true if special character", () => {
+        const result = containsSpecialChar("Gamer?");
+        expect(result).toBe(true);
+    });
 });
 // TODO: Create tests suite for validation function

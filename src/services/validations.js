@@ -6,7 +6,7 @@ const is8Long = (label) => label.length >= 8;
 
 const containsSpecialChar = (label) => {
     const special = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-    return false;
+    return label.match(special) ? true : false;
 };
 
 exports.containsSpecialChar = containsSpecialChar;
