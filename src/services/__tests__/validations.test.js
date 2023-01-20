@@ -19,8 +19,8 @@ describe("validations tests suites - isEmpty", () => {
 
 describe("validations tests suites - gamer tag", () => {
     test("should retun true if more than 8 characters", () => {
-        const  result = is8Long("");
-        expect(result).toBe(false);
+        const  result = is8Long("GameTagLong");
+        expect(result).toBe(true);
     });
 });
 // TODO: Create tests suite for validation function
