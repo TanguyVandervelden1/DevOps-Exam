@@ -1,4 +1,4 @@
-const { isEmpty, is8Long } = require("../validations");
+const { isEmpty, is8Long, containsSpecialChar } = require("../validations");
 
 describe("validations tests suites - isEmpty", () => {
     test("should return true as the label is undefined", () => {
@@ -17,17 +17,27 @@ describe("validations tests suites - isEmpty", () => {
     });
 });
 
-describe("validations tests suites - gamer tag", () => {
+describe("validations tests suites - gamer tag 8 Long", () => {
     test("should retun true if more than 8 characters", () => {
-        const  result = is8Long("GameTagLong");
+        const result = is8Long("GameTagLong");
         expect(result).toBe(true);
     });
 
     test("should retun true if more than 8 characters", () => {
-        const  result = is8Long("Gamer");
+        const result = is8Long("Gamer");
         expect(result).toBe(false);
     });
 
-    
+    test("should retun false if no special character", () => {
+        const result = is8Long("Gamer");
+        expect(result).toBe(false);
+    });
+});
+
+describe("validations tests suites - gamer tag special character", () => {
+    test("should retun false if no special character", () => {
+        const result = containsSpecialChar("Gamer");
+        expect(result).toBe(false);
+    });
 });
 // TODO: Create tests suite for validation function
