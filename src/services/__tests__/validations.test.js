@@ -1,4 +1,4 @@
-const { isEmpty, is8Long, containsSpecialChar } = require("../validations");
+const { isEmpty, is8Long, containsSpecialChar, containsNuber } = require("../validations");
 
 describe("validations tests suites - isEmpty", () => {
     test("should return true as the label is undefined", () => {
@@ -42,6 +42,18 @@ describe("validations tests suites - gamer tag special character", () => {
 
     test("should retun true if special character", () => {
         const result = containsSpecialChar("Gamer?");
+        expect(result).toBe(true);
+    });
+});
+
+describe("validations tests suites - gamer tag number", () => {
+    test("should retun false if no special character", () => {
+        const result = containsNuber("Gamer");
+        expect(result).toBe(false);
+    });
+
+    test("should retun true if special character", () => {
+        const result = containsNuber("Gamer4");
         expect(result).toBe(true);
     });
 });
